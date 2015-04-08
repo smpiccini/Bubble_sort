@@ -10,12 +10,12 @@ int main(int argc, char** argv) {
         printf("Inserisci il %d° valore: ", i+1);
         scanf("%d", &v[i]);
     }
-    for (j=N;j>0;j--) {
-        for (i=0;i<j;i++) {
-            if (v[i]>v[i+1]) {
-                scambia=v[i];
-                v[i]=v[i+1];
-                v[i+1]=scambia;
+    for (i=0;i<N;i++) {
+        for (j=N-1;j>i;j--) {
+            if (v[j]<v[j-1]) {
+                scambia=v[j];
+                v[j]=v[j-1];
+                v[j-1]=scambia;
             }
         }
     }
